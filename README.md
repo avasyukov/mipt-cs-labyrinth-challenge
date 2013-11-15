@@ -19,4 +19,5 @@ Run
 ===
 
 First console: ./server/server
+
 Second console: ./player/player
