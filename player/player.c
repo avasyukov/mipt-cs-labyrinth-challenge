@@ -14,7 +14,7 @@
 
 char map[MAX_Y][MAX_X];
 
-#include "dummy.h"
+#include "brain.h"
 
 int main()
 {

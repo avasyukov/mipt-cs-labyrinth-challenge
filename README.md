@@ -6,3 +6,17 @@ Sources of labyrinth challenge created at MIPT seminars. Really ugly for the mom
 Tested with gcc on Fedora 16 and above.
 
 Licensed under GPLv3. Feel free to fork and use for your purposes.
+
+Compile
+=======
+
+Place your logick into player/brain.h and run:
+
+make
+
+
+Run
+===
+
+First console: ./server/server
+Second console: ./player/player
