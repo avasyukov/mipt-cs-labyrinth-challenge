@@ -18,14 +18,23 @@ char map[MAX_Y][MAX_X];
 
 int main()
 {
-	int i = 1;
-	//printf("Enter player number - 1 or 2?\n");
-	//scanf("%d",&i);
-
 	key_t data_shm_key = 4567;
 	key_t server_sem_key = 5678;
 	key_t player_sem_key = 7890;
 	key_t map_shm_key = 6789;
+
+	struct sembuf sem_check;
+	sem_check.sem_num = 0;
+	sem_check.sem_op = -1;
+	sem_check.sem_flg = IPC_NOWAIT;
+
+	int start_sem_id = semget(server_sem_key+100, 1, IPC_CREAT | 0666);
+	int res = semop(start_sem_id, &sem_check, 1);
+
+	int i = 1;
+	if( res == -1 )
+		i++;
+	printf("Joining as player %d\n", i);
 
 	void *data_shm_addr = NULL;
 	int data_shm_size = sizeof(int) * 4;

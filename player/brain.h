@@ -10,15 +10,15 @@
  * '#' - wall, not available for move
  * '*' - treasure, available for move, gives bonus
  * '@' - monster, available for move, gives penalty
- * '1' to '9' - players, available for move
+ * '0' to '9' - players, available for move
  */
 
 /*
  * Command values:
- * 1 - move left
- * 2 - move up
- * 3 - move right
- * 4 - move down
+ * 1 - move left	(cur_x--)
+ * 2 - move up		(cur_y++)	- be aware, UP from map point of view is DOWN on the screen
+ * 3 - move right	(cur_x++)
+ * 4 - move down	(cur_y--)	- be aware, DOWN from map point of view is UP on the screen
  * any other value - do nothing
  */
 void do_next_step(int cur_x, int cur_y, int *command)

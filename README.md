@@ -10,7 +10,7 @@ Licensed under GPLv3. Feel free to fork and use for your purposes.
 Compile
 =======
 
-Place your logick into player/brain.h and run:
+Place your logic into player/brain.h and run:
 
 make
 
@@ -18,6 +18,10 @@ make
 Run
 ===
 
-First console: ./server/server
+Default settings start two player game. So:
 
+First console: ./server/server
 Second console: ./player/player
+Third console: ./player/player
+
+This will start two players with identical logic. Of course, you can prepare two players with different logic - just clone player.c and include different brains for these two players.

@@ -13,7 +13,7 @@
 
 #define NUM_OF_MONSTERS 20
 #define NUM_OF_TREASURES 20
-#define PLAYERS 1
+#define PLAYERS 2
 #define STEPS 1000000
 
 int continue_game(int step) {
@@ -297,6 +297,9 @@ int main()
 
 	for( int i = 0; i < PLAYERS; i++)
 		semop(server_sem_id[i], &sem_up, 1);
+
+	int start_sem_id = semget(server_sem_key+100, 1, IPC_CREAT | 0666);
+	semop(start_sem_id, &sem_up, 1);
 
 	for( int i = 0; i < PLAYERS; i++)
 		semop(player_sem_id[i], &sem_down, 1);
