@@ -21,7 +21,9 @@ Run
 Default settings start two player game. So:
 
 First console: ./server/server
+
 Second console: ./player/player
+
 Third console: ./player/player
 
 This will start two players with identical logic. Of course, you can prepare two players with different logic - just clone player.c and include different brains for these two players.
